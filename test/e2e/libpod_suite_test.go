@@ -12,7 +12,7 @@ import (
 )
 
 func IsRemote() bool {
-	return false
+	return true
 }
 
 // Podman is the exec call to podman on the filesystem
