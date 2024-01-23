@@ -16,9 +16,9 @@ import (
 	"crypto/x509"
 	"encoding/pem"
 
+	"github.com/containers/podman/v4/test/utils/kernel"
 	"github.com/sirupsen/logrus"
 
-	"github.com/containers/storage/pkg/parsers/kernel"
 	. "github.com/onsi/ginkgo/v2"    //nolint:revive,stylecheck
 	. "github.com/onsi/gomega"       //nolint:revive,stylecheck
 	. "github.com/onsi/gomega/gexec" //nolint:revive,stylecheck
