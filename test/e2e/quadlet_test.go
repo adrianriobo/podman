@@ -11,6 +11,7 @@ import (
 
 	"github.com/containers/podman/v5/pkg/systemd/parser"
 	. "github.com/containers/podman/v5/test/utils"
+	"github.com/containers/podman/v5/test/utils/files"
 	"github.com/containers/podman/v5/version"
 	"github.com/mattn/go-shellwords"
 
@@ -652,7 +653,7 @@ BOGUS=foo
 		It("Should scan and return output for files in subdirectories", func() {
 			dirName := "test_subdir"
 
-			err = CopyDirectory(filepath.Join("quadlet", dirName), quadletDir)
+			err = files.CopyDirectory(filepath.Join("quadlet", dirName), quadletDir)
 
 			if err != nil {
 				GinkgoWriter.Println("error:", err)
@@ -745,7 +746,7 @@ BOGUS=foo
 					dotdDirDest := filepath.Join(quadletDir, snippetdir)
 					err = os.Mkdir(dotdDirDest, os.ModePerm)
 					Expect(err).ToNot(HaveOccurred())
-					err = CopyDirectory(dotdDir, dotdDirDest)
+					err = files.CopyDirectory(dotdDir, dotdDirDest)
 					Expect(err).ToNot(HaveOccurred())
 				}
 			}
